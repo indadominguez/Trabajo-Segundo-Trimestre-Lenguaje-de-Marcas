@@ -10,5 +10,7 @@ Mucha información de la página web es completamente irreal, ya que, al tener u
 ---
 
 ## Páginas Requeridas
-La página web tendrá como primera página e introducción, la historia de los Italianos, como llegaron a Cádiz y su increible éxito desde que abrió en el 1940.
-
+1. **Primera Página** Historia de los Italianos, como llegaron a Cádiz y su increible éxito desde que abrió en el 1940.
+2. **Segunda Página** Carta del local, incluyendo fotos, descripción de los postres y precios de los mismos.
+3. **Tercera Página** Página de contacto con un formulario principal y redes sociales asociadas a Los Italianos.
+4. **Cuarta  Página** Zona de reseñas y comentarios de opinión de los clientes.
