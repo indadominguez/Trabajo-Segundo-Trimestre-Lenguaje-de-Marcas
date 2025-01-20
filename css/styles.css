@@ -1,0 +1,115 @@
+/* styles.css */
+
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para el header */
+header {
+    background-color: #82D173; /* Color verde */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+header .logo img {
+    height: 50px; /* Ajusta el tamaño del logo */
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #FFA552; /* Color naranja al pasar el cursor */
+}
+
+/* Estilo para el formulario de búsqueda */
+header form.search {
+    display: flex;
+    align-items: center;
+}
+
+header form.search input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+header form.search button {
+    background-color: #FFA552; /* Color naranja */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+header form.search button:hover {
+    background-color: #82D173; /* Color verde al pasar el cursor */
+}
+
+/* Estilo para el contenido principal */
+main {
+    padding: 40px 20px;
+}
+
+main section {
+    margin-bottom: 30px;
+}
+
+main section h2 {
+    color: #82D173; /* Color verde para los títulos */
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+main section p {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Estilo para el footer */
+footer {
+    background-color: #FFA552; /* Color naranja */
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Estilo para enlaces del footer */
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer a:hover {
+    color: #82D173; /* Color verde al pasar el cursor */
+}
