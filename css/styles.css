@@ -1,6 +1,4 @@
-/* styles.css */
 
-/* Estilo global */
 * {
     margin: 0;
     padding: 0;
@@ -8,9 +6,9 @@
     font-family: Arial, sans-serif;
 }
 
-/* Estilo para el header */
+
 header {
-    background-color: #82D173; /* Color verde */
+    background-color: #82D173;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -19,7 +17,7 @@ header {
 }
 
 header .logo img {
-    height: 50px; /* Ajusta el tamaño del logo */
+    height: 50px; 
 }
 
 header nav ul {
@@ -39,10 +37,10 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #FFA552; /* Color naranja al pasar el cursor */
+    color: #FFA552; 
 }
 
-/* Estilo para el formulario de búsqueda */
+
 header form.search {
     display: flex;
     align-items: center;
@@ -56,7 +54,7 @@ header form.search input[type="text"] {
 }
 
 header form.search button {
-    background-color: #FFA552; /* Color naranja */
+    background-color: #FFA552; 
     color: #fff;
     border: none;
     padding: 8px 12px;
@@ -65,10 +63,10 @@ header form.search button {
 }
 
 header form.search button:hover {
-    background-color: #82D173; /* Color verde al pasar el cursor */
+    background-color: #82D173; 
 }
 
-/* Estilo para el contenido principal */
+
 main {
     padding: 40px 20px;
 }
@@ -78,7 +76,7 @@ main section {
 }
 
 main section h2 {
-    color: #82D173; /* Color verde para los títulos */
+    color: #82D173; 
     font-size: 2rem;
     margin-bottom: 15px;
 }
@@ -89,9 +87,9 @@ main section p {
     line-height: 1.6;
 }
 
-/* Estilo para el footer */
+
 footer {
-    background-color: #FFA552; /* Color naranja */
+    background-color: #FFA552; 
     color: #fff;
     text-align: center;
     padding: 15px;
@@ -104,12 +102,12 @@ footer p {
     font-size: 1rem;
 }
 
-/* Estilo para enlaces del footer */
+
 footer a {
     text-decoration: none;
     color: #fff;
 }
 
 footer a:hover {
-    color: #82D173; /* Color verde al pasar el cursor */
+    color: #82D173; 
 }
