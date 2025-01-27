@@ -1,28 +1,52 @@
+/* Definir las variables de colores y fuentes */
+:root {
+    --color-principal: #82D173;  /* Verde */
+    --color-secundario: #B497D6;  /* Morado claro */
+    --color-texto: #333; /* Color texto */
+    --color-blanco: #fff; /* Blanco */
+    --color-hover: #6DB364; /* Verde oscuro */
+    --color-shadow: rgba(0, 0, 0, 0.1); /* Sombras suaves */
+    --font-principal: Arial, sans-serif;
+}
 
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-principal);
 }
 
-
+/* Encabezado */
 header {
-    background-color: #82D173;
+    background-color: var(--color-principal);  /* Cambié a verde */
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
+    text-align: center;
+    color: var(--color-blanco);
+    box-shadow: 0 4px 12px var(--color-shadow);
 }
 
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Logo y navegación */
 header .logo img {
-    height: 50px; 
+    height: 50px;
+    border-radius: 50%;
 }
 
 header nav ul {
     display: flex;
+    justify-content: center;
     list-style: none;
+    margin-top: 10px;
 }
 
 header nav ul li {
@@ -31,19 +55,21 @@ header nav ul li {
 
 header nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: var(--color-blanco);
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #FFA552; 
+    color: var(--color-secundario);  /* Hover morado claro */
+    transform: scale(1.1);
 }
 
-
+/* Formulario de búsqueda */
 header form.search {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 header form.search input[type="text"] {
@@ -53,61 +79,129 @@ header form.search input[type="text"] {
     margin-right: 10px;
 }
 
-header form.search button {
-    background-color: #FFA552; 
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-header form.search button:hover {
-    background-color: #82D173; 
-}
-
-
+/* Secciones en main (horizontal) */
 main {
     padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;  /* Para que se ajusten en pantallas pequeñas */
 }
 
+/* Secciones de Sabores, Especialidades y Promociones */
 main section {
-    margin-bottom: 30px;
+    background-color: var(--color-blanco);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--color-shadow);
+    width: 30%;  /* Aseguramos que cada sección ocupe un 30% del ancho */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efectos hover */
+main section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el título de las secciones */
 main section h2 {
-    color: #82D173; 
+    color: var(--color-principal);  /* Verde */
     font-size: 2rem;
     margin-bottom: 15px;
 }
 
-main section p {
-    color: #333;
+/* Estilo para las listas dentro de cada sección */
+main section ul {
+    list-style: none;
+    padding: 0;
     font-size: 1.1rem;
-    line-height: 1.6;
 }
 
+main section ul li {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
+/* Hover para los items de la lista */
+main section ul li:hover {
+    background-color: var(--color-principal);  /* Verde oscuro */
+    transform: translateX(5px);
+}
+
+/* Pie de página */
 footer {
-    background-color: #FFA552; 
-    color: #fff;
+    background-color: var(--color-principal);  /* Fondo verde */
+    color: var(--color-blanco);
     text-align: center;
-    padding: 15px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    padding: 20px;
+    border-top: 5px solid var(--color-secundario);  /* Borde morado claro */
+    box-shadow: 0 4px 12px var(--color-shadow);
 }
 
 footer p {
     font-size: 1rem;
+    margin: 5px 0;
 }
-
 
 footer a {
     text-decoration: none;
-    color: #fff;
+    color: var(--color-blanco);
+    font-weight: bold;
 }
 
 footer a:hover {
-    color: #82D173; 
+    color: var(--color-secundario);  /* Hover morado claro */
 }
+
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer .social-media ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer .social-media a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer .social-media a:hover {
+    color: var(--color-principal);  /* Hover verde */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main section {
+        width: 90%;  /* Cada sección ocupa más espacio en pantallas pequeñas */
+        margin-bottom: 20px;
+    }
+
+    footer .social-media ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+
+
+
+
+
+
