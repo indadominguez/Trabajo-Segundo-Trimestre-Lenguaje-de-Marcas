@@ -1,15 +1,14 @@
-/* Definir las variables de colores y fuentes */
+
 :root {
-    --color-principal: #82D173;  /* Verde */
-    --color-secundario: #B497D6;  /* Morado claro */
-    --color-texto: #333; /* Color texto */
-    --color-blanco: #fff; /* Blanco */
-    --color-hover: #6DB364; /* Verde oscuro */
-    --color-shadow: rgba(0, 0, 0, 0.1); /* Sombras suaves */
+    --color-principal: #82D173; 
+    --color-secundario: #B497D6;  
+    --color-texto: #333; 
+    --color-blanco: #fff; 
+    --color-hover: #6DB364; 
+    --color-shadow: rgba(0, 0, 0, 0.1);
     --font-principal: Arial, sans-serif;
 }
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -17,9 +16,9 @@
     font-family: var(--font-principal);
 }
 
-/* Encabezado */
+
 header {
-    background-color: var(--color-principal);  /* Cambié a verde */
+    background-color: var(--color-principal);  
     padding: 20px;
     text-align: center;
     color: var(--color-blanco);
@@ -36,7 +35,6 @@ header p {
     margin: 0;
 }
 
-/* Logo y navegación */
 header .logo img {
     height: 50px;
     border-radius: 50%;
@@ -61,11 +59,11 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: var(--color-secundario);  /* Hover morado claro */
+    color: var(--color-secundario);  
     transform: scale(1.1);
 }
 
-/* Formulario de búsqueda */
+
 header form.search {
     display: flex;
     justify-content: center;
@@ -79,39 +77,39 @@ header form.search input[type="text"] {
     margin-right: 10px;
 }
 
-/* Secciones en main (horizontal) */
+
 main {
     padding: 40px 20px;
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    flex-wrap: wrap;  /* Para que se ajusten en pantallas pequeñas */
+    flex-wrap: wrap;  
 }
 
-/* Secciones de Sabores, Especialidades y Promociones */
+
 main section {
     background-color: var(--color-blanco);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 12px var(--color-shadow);
-    width: 30%;  /* Aseguramos que cada sección ocupe un 30% del ancho */
+    width: 30%;  
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efectos hover */
+
 main section:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo para el título de las secciones */
+
 main section h2 {
-    color: var(--color-principal);  /* Verde */
+    color: var(--color-principal);  
     font-size: 2rem;
     margin-bottom: 15px;
 }
 
-/* Estilo para las listas dentro de cada sección */
+
 main section ul {
     list-style: none;
     padding: 0;
@@ -127,19 +125,19 @@ main section ul li {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover para los items de la lista */
+
 main section ul li:hover {
-    background-color: var(--color-principal);  /* Verde oscuro */
+    background-color: var(--color-principal); 
     transform: translateX(5px);
 }
 
-/* Pie de página */
+
 footer {
-    background-color: var(--color-principal);  /* Fondo verde */
+    background-color: var(--color-principal);  
     color: var(--color-blanco);
     text-align: center;
     padding: 20px;
-    border-top: 5px solid var(--color-secundario);  /* Borde morado claro */
+    border-top: 5px solid var(--color-secundario);  
     box-shadow: 0 4px 12px var(--color-shadow);
 }
 
@@ -155,7 +153,7 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--color-secundario);  /* Hover morado claro */
+    color: var(--color-secundario); 
 }
 
 footer .social-media {
@@ -177,10 +175,10 @@ footer .social-media a {
 }
 
 footer .social-media a:hover {
-    color: var(--color-principal);  /* Hover verde */
+    color: var(--color-principal); 
 }
 
-/* Responsividad */
+
 @media (max-width: 768px) {
     main {
         flex-direction: column;
@@ -188,7 +186,7 @@ footer .social-media a:hover {
     }
 
     main section {
-        width: 90%;  /* Cada sección ocupa más espacio en pantallas pequeñas */
+        width: 90%;  
         margin-bottom: 20px;
     }
 
