@@ -10,6 +10,14 @@
     --font-secundario: 'Georgia', serif;
 
     --box-shadow: 0 0.25rem 0.75rem var(--color-shadow);
+
+    --color-principal-dark: #538E5A;
+    --color-secundario-dark: #7A5B9C;
+    --color-texto-dark: #ddd;
+    --color-fondo-dark: #1e1e1e;
+    --color-blanco-dark: #333;
+    --color-hover-dark: #46744A;
+    --color-shadow-dark: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -23,6 +31,16 @@ body {
     line-height: 1.6;
     background-color: #f8f9fa;
     color: var(--color-texto);
+}
+
+.dark-mode {
+    --color-principal: var(--color-principal-dark);
+    --color-secundario: var(--color-secundario-dark);
+    --color-texto: var(--color-texto-dark);
+    --color-blanco: var(--color-blanco-dark);
+    --color-hover: var(--color-hover-dark);
+    --color-shadow: var(--color-shadow-dark);
+    background-color: var(--color-fondo-dark);
 }
 
 header {
@@ -496,12 +514,18 @@ footer p a:hover {
 }
 
 @media (max-width: 768px) {
-    .especialidad-item {
-        width: 100%; 
+    header nav ul {
+        flex-direction: column;
+    }
+
+    .form-section form {
+        padding: 0 20px;
     }
 }
 
-
-
-
-
+@media (max-width: 480px) {
+    .form-section form input,
+    .form-section form button {
+        font-size: 1rem;
+    }
+}
