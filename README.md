@@ -38,4 +38,8 @@ estuve bastante tiempo pero conseguí arreglarlo haciendo un cambio en el css en
 - También incluye un poquito de nuestra historia, desde cuando estamos alojados en Cádiz y nuestra calidad y dedicación
 
 
-
+## Validación del código
+He implementado la validación del código con W3C Validator, al no haber hecho en el trabajo anterior la validación ya que no trabajé como debería y que en este trimestre nos hemos visto menos,
+de lo esperado, a la hora de poder realizar la confirmación de la validación, nose como poder hacerla, el código está casi entero validado menos algunos fallos en el css, pero no puedo 
+verificar que esté bien de verdad, y me he encontrado con la duda cuando ya lamentablemente no se me puede ayudar y tampoco quiero dar pena, por lo que aunque, es uno de los requisitos más importantes del 
+trabajo, no me ha sido posible demostrar que la validación es correcta.
