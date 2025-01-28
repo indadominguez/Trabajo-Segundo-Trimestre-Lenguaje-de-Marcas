@@ -1,4 +1,4 @@
-/* Definición de variables */
+
 :root {
     --color-principal: #82D173;
     --color-secundario: #B497D6;
@@ -9,11 +9,9 @@
     --font-principal: Arial, sans-serif;
     --font-secundario: 'Georgia', serif;
 
-    /* Sombras para reutilizar */
     --box-shadow: 0 0.25rem 0.75rem var(--color-shadow);
 }
 
-/* Normalización y fuente predeterminada */
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +25,6 @@ body {
     color: var(--color-texto);
 }
 
-/* Estilos de cabecera */
 header {
     background-color: var(--color-principal);
     color: var(--color-blanco);
@@ -65,12 +62,10 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* Estilos generales del cuerpo */
 main {
     padding: 2rem;
 }
 
-/* Títulos de sección con fondo */
 .titulo-seccion {
     background-image: url("../assets/imagenes/foto_fondo_seccion.jpg");
     background-size: cover;
@@ -89,13 +84,12 @@ main {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Títulos principales (h1, h2) */
+
 h1, h2 {
     font-family: var(--font-secundario);
     font-size: 3rem;
 }
 
-/* Secciones horizontales con margen entre ellas */
 .secciones-horizontales {
     display: flex;
     justify-content: space-between;
@@ -110,6 +104,13 @@ h1, h2 {
     box-shadow: var(--box-shadow);
     flex: 1;
     transition: transform 0.3s ease;
+}
+
+.section-item img {
+    width: 100%; 
+    height: 200px;
+    object-fit: cover; 
+    border-radius: 0.5rem;
 }
 
 .section-item:hover {
@@ -129,7 +130,6 @@ h1, h2 {
     margin-top: 1rem;
 }
 
-/* Listas de helados y bebidas */
 .lista-helados, .lista-bebidas {
     list-style: none;
     padding: 0;
@@ -167,14 +167,12 @@ h1, h2 {
     border-radius: 0.5rem;
 }
 
-/* Descripción de especialidades */
 .descripcion-especialidades {
     font-size: 1.2rem;
     color: var(--color-texto);
     margin: 1rem 0;
 }
 
-/* Estilos de formulario */
 form {
     max-width: 37.5rem;
     margin: 0 auto;
@@ -212,7 +210,6 @@ form button:hover {
     background-color: var(--color-hover);
 }
 
-/* Estilos de pie de página */
 footer {
     background-color: var(--color-principal);
     color: var(--color-blanco);
@@ -270,19 +267,241 @@ footer p a:hover {
     transform: scale(1.1);
 }
 
-/* Estilos de las imágenes de especialidades */
+
+.lista-especialidades {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.especialidad-item {
+    background-color: var(--color-blanco);
+    padding: 1.25rem;
+    text-align: center;
+    border-radius: 0.625rem;
+    box-shadow: var(--box-shadow);
+    width: 48%;  
+    transition: transform 0.3s ease;
+}
+
+.especialidad-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0.5rem 1rem var(--color-shadow);
+}
+
+.especialidad-item h3 {
+    color: var(--color-principal);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.especialidad-item p {
+    color: var(--color-texto);
+    font-size: 1.2rem;
+}
+
 .imagen-especialidad {
     width: 100%;
     height: auto;
-    border-radius: 0.5rem;
     margin-top: 1rem;
+    border-radius: 0.5rem;
 }
 
-/* Estilos responsivos */
+.comentario-especialidad {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem; 
+    color: #555; 
+    font-style: italic; 
+    margin-top: 0.5rem; 
+}
+
+.imagen-helado, .imagen-especialidad {
+    width: 12rem; 
+    height: 12rem; 
+    object-fit: cover; 
+    margin-bottom: 0.625rem; 
+}
+
+.imagen-helado, .imagen-especialidad {
+    display: block;
+    max-width: 100%; 
+    max-height: 100%; 
+}
+
+.contacto-page main {
+    display: block; /
+}
+
+.contacto-page .contenido-superior {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  
+    gap: 2rem; 
+    align-items: start;  
+    margin-bottom: 2rem;  
+}
+
+.contacto-page form {
+    max-width: 37.5rem;
+    background: var(--color-blanco);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    flex: 1;
+}
+
+.contacto-page form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.contacto-page form input, .contacto-page form textarea, .contacto-page form button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 0.0625rem solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.contacto-page form button {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contacto-page form button:hover {
+    background-color: var(--color-hover);
+}
+
+.contacto-page .form-image {
+    display: flex;
+    align-items: center;  
+    justify-content: center; 
+    max-width: 100%;  
+    height: 100%;  
+}
+
+.contacto-page .form-image img {
+    max-width: 100%;  
+    max-height: 100%; 
+    object-fit: cover; 
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.contacto-page .formulario {
+    max-width: 100%;  
+}
+
+.contacto-page .proteccion-datos {
+    font-family: var(--font-secundario);
+    font-size: 1rem;
+    color: var(--color-texto);
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.contacto-page .proteccion-datos h3 {
+    font-size: 2rem;
+    color: var(--color-principal);
+    margin-bottom: 1rem;
+}
+
+.contacto-page .proteccion-datos p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-texto);
+}
+
+
+.historia {
+    background-color: var(--color-blanco);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 0.625rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.historia h2 {
+    color: var(--color-principal);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.historia p {
+    color: var(--color-texto);
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+.reseñas {
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    border-radius: 0.625rem;
+    box-shadow: var(--box-shadow);
+}
+
+.reseñas h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.lista-reseñas {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.item-reseña {
+    background-color: var(--color-blanco);
+    color: var(--color-texto);
+    padding: 1.5rem;
+    border-radius: 0.625rem;
+    box-shadow: var(--box-shadow);
+    text-align: left;
+    font-size: 1rem;
+}
+
+.item-reseña h3 {
+    color: var(--color-principal);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.item-reseña p {
+    margin: 0.5rem 0;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.item-reseña:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0.5rem 1rem var(--color-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 @media (max-width: 768px) {
-    .helado-item, .bebida-item {
-        width: 100%;
+    .especialidad-item {
+        width: 100%; 
     }
 }
+
+
+
 
 
