@@ -10,9 +10,36 @@ Mucha información de la página web es completamente irreal, ya que, al tener u
 ---
 
 ## Páginas Requeridas
-1. **Primera Página** Historia de los Italianos, como llegaron a Cádiz y su increible éxito desde que abrió en el 1940.
+1. **Primera Página** Índice de nuestra página web, nosotros, nuestras promociones y la ubicación del local.
 2. **Segunda Página** Carta del local, incluyendo fotos, descripción de los postres y precios de los mismos.
 3. **Tercera Página** Página de contacto con un formulario principal y redes sociales asociadas a Los Italianos.
 4. **Cuarta  Página** Zona de reseñas y comentarios de opinión de los clientes.
 
 
+---
+
+## Índice.
+- Se encuentra todo lo relacionado con nuestra página web, para que sea más flexible y cómodo, la página web contiene un marcador con nuestros cuatro archivos, relacionados todos.
+- Continene un título principal y dentro tres sections que incluyen una foto y breve explicación de que se ofrece en cada una de las fotos, en este caso, Salón Italiano, Promociones y Ubicación.
+- El footer es igual para todos los archivos, incluyen nuestras redes sociales, el número de teléfono, la dirección y un botón de inicio para volver al índice siempre que se quiera.
+
+
+## Carta.
+- Todos los sabores de nuestra heladería se encuentran dentro de este menú, cada uno viene con su respectiva foto para que el cliente pueda saber que va a consumir, para poder colocar todas las fotos iguales,
+estuve bastante tiempo pero conseguí arreglarlo haciendo un cambio en el css en las class .helado-item y .especialidad-item.
+- También por supuesto contiene nuestras especialidades y las bebidas que ofertamos.
+
+## Formulario.
+- La página de contacto contiene 6 espacios necesarios para poder registrarse en la pagina web de la heladería.
+- Y contiene nuestra política de privacidad para que el cliente siempre sepa que tiene y no tiene que hacer dentro de la página web.
+
+## Reseñas.
+- Es el archivo más sencillo de la página web, pero no quita que sea importante, en la sección se encuentran reseñas de clintes.
+- También incluye un poquito de nuestra historia, desde cuando estamos alojados en Cádiz y nuestra calidad y dedicación
+
+
+## Validación del código
+He implementado la validación del código con W3C Validator, al no haber hecho en el trabajo anterior la validación ya que no trabajé como debería y que en este trimestre nos hemos visto menos,
+de lo esperado, a la hora de poder realizar la confirmación de la validación, nose como poder hacerla, el código está casi entero validado menos algunos fallos en el css, pero no puedo 
+verificar que esté bien de verdad, y me he encontrado con la duda cuando ya lamentablemente no se me puede ayudar y tampoco quiero dar pena, por lo que aunque, es uno de los requisitos más importantes del 
+trabajo, no me ha sido posible demostrar que la validación es correcta.
