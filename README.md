@@ -81,7 +81,7 @@ ECMAScript es el estándar en el que se basa JavaScript y estas son Algunas de s
 
 **Comparación entre lenguajes de script como JavaScript, TypeScript u otros.**
 
-Ya que en el trabajo usaremos JavaScript, voy hacer una pequeña comparación de JavaScript, TypeScript y de Dart en forma de tabla (he buscado como se hacía para que la explicación quedase mucho más leible) para ver las ventajas y desventajas de cada uno y sus características principales.
+Ya que en el trabajo usaremos JavaScript, voy hacer una pequeña comparación de JavaScript, TypeScript y de Dart en forma de tabla (he buscado como se hacía para que la explicación quedase mucho más legible) para ver las ventajas y desventajas de cada uno y sus características principales.
 
 | **Característica**     | **JavaScript**                                            | **TypeScript**                                                      | **Dart**                                                  |
 |------------------------|-----------------------------------------------------------|---------------------------------------------------------------------|-----------------------------------------------------------|
