@@ -92,3 +92,35 @@ Ya que en el trabajo usaremos JavaScript, voy hacer una pequeña comparación de
 | **Popularidad**        | Muy popular, estándar para desarrollo web.               | Popular en grandes proyectos, especialmente con Angular.            | Popularidad en crecimiento, especialmente con el uso de Flutter para apps móviles. |
 | **Herramientas**       | Amplio ecosistema (React, Node.js, etc.).                | Mejor soporte en proyectos grandes gracias a su tipado estático.     | Se usa principalmente con Flutter para desarrollo móvil y web. |
 
+**Uso de ejemplos o referencias para justificar la clasificación.**
+
+Para que se puedan observar de manera clara las definiciones de la tabla, aqui dejo unos ejemplos para diferenciar que hace cada lenguaje script
+
+**JavaScript:**
+
+JavaScript se usa para crear interactividad en páginas web:
+
+```html
+<button onclick="alert('¡Hola, Mundo!')">Haz clic aquí</button>
+```
+
+**TypeScript:**
+
+TypeScript agrega tipado estático para mejorar la detección de errores:
+
+```typescript
+function sumar(a: number, b: number): number {
+    return a + b;
+}
+```
+
+---
+
+**Dart:**
+
+Dart se usa con **Flutter** para aplicaciones móviles:
+
+```dart
+void main() {
+  runApp(MyApp());
+}
