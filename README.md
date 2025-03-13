@@ -94,33 +94,31 @@ Ya que en el trabajo usaremos JavaScript, voy hacer una pequeña comparación de
 
 **Uso de ejemplos o referencias para justificar la clasificación.**
 
-Para que se puedan observar de manera clara las definiciones de la tabla, aqui dejo unos ejemplos para diferenciar que hace cada lenguaje script
+Para que se puedan observar de manera clara las definiciones de la tabla, aqui dejo unos ejemplos para diferenciar que hace cada lenguaje script:
 
-**JavaScript:**
+  - **JavaScript:**
 
-JavaScript se usa para crear interactividad en páginas web:
+    - JavaScript se usa para crear interactividad en páginas web:
+    
+    ```html
+    <button onclick="alert('¡Hola, Mundo!')">Haz clic aquí</button>
+    ```
 
-```html
-<button onclick="alert('¡Hola, Mundo!')">Haz clic aquí</button>
-```
+  - **TypeScript:**
 
-**TypeScript:**
+    - TypeScript agrega tipado estático para mejorar la detección de errores:
+  
+    ```typescript
+    function sumar(a: number, b: number): number {
+        return a + b;
+    }
+    ```
 
-TypeScript agrega tipado estático para mejorar la detección de errores:
+  - **Dart:**
 
-```typescript
-function sumar(a: number, b: number): number {
-    return a + b;
-}
-```
-
----
-
-**Dart:**
-
-Dart se usa con **Flutter** para aplicaciones móviles:
-
-```dart
-void main() {
-  runApp(MyApp());
-}
+    - Dart se usa con **Flutter** para aplicaciones móviles:
+    
+    ```dart
+    void main() {
+      runApp(MyApp());
+    }
