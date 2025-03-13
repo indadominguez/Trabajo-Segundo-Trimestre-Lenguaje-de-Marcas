@@ -43,3 +43,171 @@ He implementado la validación del código con W3C Validator, al no haber hecho 
 de lo esperado, a la hora de poder realizar la confirmación de la validación, nose como poder hacerla, el código está casi entero validado menos algunos fallos en el css, pero no puedo 
 verificar que esté bien de verdad, y me he encontrado con la duda cuando ya lamentablemente no se me puede ayudar y tampoco quiero dar pena, por lo que aunque, es uno de los requisitos más importantes del 
 trabajo, no me ha sido posible demostrar que la validación es correcta.
+
+## JavaScript
+El proyecto se sigue actualizando y ahora la página web de mi heladeria contendrá un nivel básico de JavaScript para poder empezar a ver la verdadera importancia de maquetar bien y tener todo nuestro código ordenado.
+
+**¿Qué son los lenguajes Script?**
+
+Los lenguajes de script son lenguajes de programación diseñados para automatizar tareas que normalmente requieren intervención manual. Estos lenguajes suelen ser más fáciles de escribir y entender en comparación con lenguajes de programación tradicionales como C++ o Java. A menudo se utilizan para el procesamiento de texto, manipulación de archivos, administración de sistemas, desarrollo web y más y los lenguajes de script pueden clasificarse en función de su ejecución y uso en desarrollo web:
+
+- **Lenguajes de script del lado del cliente**
+  - Se ejecutan en el navegador del usuario.
+  - No requieren comunicación con el servidor para su ejecución.
+  - Mejoran la interactividad y la experiencia del usuario.
+  - Ejemplos: JavaScript, TypeScript, Dart.
+
+- **Lenguajes de script del lado del servidor**
+  - Se ejecutan en el servidor antes de enviar la respuesta al cliente.
+  - Permiten manejar bases de datos, autenticación y lógica de negocio.
+  - Ejemplos: PHP, Python (Django, Flask), Node.js (basado en JavaScript), Ruby.
+
+**Características Principales de JavaScript**
+
+  En el proyecto vamos a trabajar con JavaScript por lo que es importante saber cuales son sus características más relevantes:
+
+  - **Interpretado**: No necesita compilación, el navegador lo ejecuta directamente.
+  - **Orientado a eventos**: Responde a interacciones del usuario (clics, teclas, etc.).
+  - **Débilmente tipado**: No es necesario definir el tipo de las variables.
+  - **Multiparadigma**: Soporta programación funcional, orientada a objetos y basada en eventos.
+  - **Extensible**: Se integra con HTML y CSS, además de otras APIs web.
+
+**Identificación de ECMAScript y sus versiones relevantes.**
+
+ECMAScript es el estándar en el que se basa JavaScript y estas son Algunas de sus versiones más importantes y el año en el que salieron:
+- **ES5 (2009**): Introdujo JSON nativo y mejoras en Arrays.
+- **ES6 (2015)**: Incorporó let, const, funciones flecha, clases y Promise.
+- **ES7 - ESNext (2016 en adelante)**: Añadió async/await, operadores de propagación y más mejoras.
+
+**Comparación entre lenguajes de script como JavaScript, TypeScript u otros.**
+
+Ya que en el trabajo usaremos JavaScript, voy hacer una pequeña comparación de JavaScript, TypeScript y de Dart en forma de tabla (he buscado como se hacía para que la explicación quedase mucho más legible) para ver las ventajas y desventajas de cada uno y sus características principales.
+
+| **Característica**     | **JavaScript**                                            | **TypeScript**                                                      | **Dart**                                                  |
+|------------------------|-----------------------------------------------------------|---------------------------------------------------------------------|-----------------------------------------------------------|
+| **Tipado**             | Dinámico, no requiere declarar tipos.                    | Estático, con tipado explícito, aunque puede inferirse en muchos casos. | Estático, con tipos obligatorios para variables y funciones. |
+| **Compilación**        | No requiere compilación, ejecutado directamente en el navegador. | Se compila a JavaScript antes de ejecutarse en el navegador.       | Se compila a código nativo o a JavaScript (para aplicaciones web). |
+| **Paradigma**          | Multiparadigma (funcional, orientado a objetos, etc.).    | Orientado a objetos con un enfoque más fuerte en clases e interfaces. | Orientado a objetos, muy estructurado. |
+| **Facilidad de uso**   | Fácil de aprender y usar.                                 | Requiere aprender un sistema de tipos estáticos, pero útil en proyectos grandes. | Relativamente fácil de aprender, con un enfoque más fuerte en la organización del código. |
+| **Popularidad**        | Muy popular, estándar para desarrollo web.               | Popular en grandes proyectos, especialmente con Angular.            | Popularidad en crecimiento, especialmente con el uso de Flutter para apps móviles. |
+| **Herramientas**       | Amplio ecosistema (React, Node.js, etc.).                | Mejor soporte en proyectos grandes gracias a su tipado estático.     | Se usa principalmente con Flutter para desarrollo móvil y web. |
+
+**Uso de ejemplos o referencias para justificar la clasificación.**
+
+Para que se puedan observar de manera clara las definiciones de la tabla, aqui dejo unos ejemplos para diferenciar que hace cada lenguaje script:
+
+  - **JavaScript:**
+
+    - JavaScript se usa para crear interactividad en páginas web:
+    
+    ```html
+    <button onclick="alert('¡Hola, Mundo!')">Haz clic aquí</button>
+    ```
+
+  - **TypeScript:**
+
+    - TypeScript agrega tipado estático para mejorar la detección de errores:
+  
+    ```typescript
+    function sumar(a: number, b: number): number {
+        return a + b;
+    }
+    ```
+
+  - **Dart:**
+
+    - Dart se usa con **Flutter** para aplicaciones móviles:
+    
+    ```dart
+    void main() {
+      runApp(MyApp());
+    }
+
+# Contestación y justificación de cambios en el código
+## Manipulación del DOM: Código extraído de mi proyecto
+- **Seleccionar y acceder a elementos del documento web utilizando diferentes métodos.**
+  ```javascript
+   // 1. SELECCIONAR ELEMENTOS DEL DOM
+  const formulario = document.querySelector(".formulario form");
+  console.log("Formulario seleccionado:", formulario);
+  
+  const tituloFormulario = document.querySelector(".formulario h2");
+  console.log("Título del formulario antes del cambio:", tituloFormulario.textContent);
+  
+  const campoNombre = document.getElementById("nombre");
+  console.log("Campo Nombre seleccionado:", campoNombre);
+  
+
+- **Crear y añadir nuevos elementos dinámicamente al documento.**
+  ```javascript
+  // 3. AÑADIR NUEVOS ELEMENTOS
+  const nuevoParrafo = document.createElement("p");
+  nuevoParrafo.textContent = "Déjanos tu mensaje y te responderemos lo antes posible.";
+  document.querySelector(".formulario").insertBefore(nuevoParrafo, formulario);
+  console.log("Nuevo párrafo agregado antes del formulario:", nuevoParrafo.textContent);
+
+
+- **Modificar el contenido y atributos de elementos existentes.**
+  ```javascript
+  // 2. MODIFICAR CONTENIDO Y ATRIBUTOS
+  tituloFormulario.textContent = "¡Queremos saber de ti!"; // Cambia el título del formulario
+  console.log("Título del formulario después del cambio:", tituloFormulario.textContent);
+
+
+- **Eliminar elementos de la página según criterios específicos.**
+  ```javascript
+  // Elimina el logo de Twitter si existe
+  const twitterLogo = document.querySelector("a[aria-label='Twitter']");
+  if (twitterLogo) {
+      twitterLogo.parentElement.remove();
+      console.log("El logo de Twitter ha sido eliminado.");
+  } else {
+      console.log("No se encontró el logo de Twitter.");
+  }
+
+
+- **Manipular estilos directamente desde JavaScript para modificar colores, tamaños o propiedades visuales según la interacción del usuario.**
+  
+  ```javascript
+  1.
+    // 5. MANIPULAR ESTILOS DINÁMICAMENTE
+    botonEnviar.addEventListener("mouseover", () => {
+        botonEnviar.style.backgroundColor = "#ff6600"; // Color al pasar el cursor
+        botonEnviar.style.color = "#fff";
+        console.log("Mouse sobre el botón de enviar: color cambiado a naranja.");
+    });
+    botonEnviar.addEventListener("mouseout", () => {
+        botonEnviar.style.backgroundColor = ""; // Vuelve al color original
+        botonEnviar.style.color = "";
+        console.log("Mouse fuera del botón de enviar: color como antes");
+    });
+
+  2.
+    // 6. CREAR UN NUEVO BOTÓN PARA CAMBIAR EL TEMA DE LA PÁGINA
+    const botonTema = document.createElement("button");
+    botonTema.textContent = "Modo Oscuro";
+    botonTema.style.margin = "1rem";
+    document.body.insertBefore(botonTema, document.body.firstChild);
+    console.log("Botón de cambio de tema.");
+    
+    botonTema.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const modoActual = document.body.classList.contains("dark-mode") ? "Modo Oscuro" : "Modo Claro";
+      botonTema.textContent = modoActual;
+      console.log("Modo cambiado a:", modoActual);
+  });
+
+  3.
+    // 7. AGREGAR ESTILOS PARA EL MODO OSCURO
+    const estiloModoOscuro = document.createElement("style");
+    estiloModoOscuro.textContent = `
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+        .dark-mode a {
+            color: lightblue;
+        }
+    `;
+    document.head.appendChild(estiloModoOscuro);
+    console.log("Estilos para modo oscuro.");
