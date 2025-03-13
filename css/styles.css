@@ -85,7 +85,7 @@ main {
 }
 
 .titulo-seccion {
-    background-image: url("../assets/imagenes/foto_fondo_seccion.jpg");
+    background-image: url();
     background-size: cover;
     background-position: center;
     padding: 6rem 2rem;
