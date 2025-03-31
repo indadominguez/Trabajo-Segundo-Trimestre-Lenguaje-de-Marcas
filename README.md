@@ -44,6 +44,7 @@ de lo esperado, a la hora de poder realizar la confirmación de la validación, 
 verificar que esté bien de verdad, y me he encontrado con la duda cuando ya lamentablemente no se me puede ayudar y tampoco quiero dar pena, por lo que aunque, es uno de los requisitos más importantes del 
 trabajo, no me ha sido posible demostrar que la validación es correcta.
 
+# Fase 2
 ## JavaScript
 El proyecto se sigue actualizando y ahora la página web de mi heladeria contendrá un nivel básico de JavaScript para poder empezar a ver la verdadera importancia de maquetar bien y tener todo nuestro código ordenado.
 
@@ -211,3 +212,5 @@ Para que se puedan observar de manera clara las definiciones de la tabla, aqui d
     `;
     document.head.appendChild(estiloModoOscuro);
     console.log("Estilos para modo oscuro.");
+
+# Fase 3
