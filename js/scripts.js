@@ -139,26 +139,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Flujo
 document.addEventListener("DOMContentLoaded", function() {
-    const searchInput = document.getElementById('search'); // Obtener el campo de búsqueda
-    const heladosList = document.querySelectorAll('.helado-item'); // Obtener todos los productos (helados)
-    const especialidadesList = document.querySelectorAll('.especialidad-item'); // Obtener todas las especialidades
-    const bebidasList = document.querySelectorAll('.bebida-item'); // Obtener todas las bebidas
+    const searchInput = document.getElementById('search');
+    const heladosList = document.querySelectorAll('.helado-item'); 
+    const especialidadesList = document.querySelectorAll('.especialidad-item'); 
+    const bebidasList = document.querySelectorAll('.bebida-item'); 
 
-    // Función para filtrar los productos
+
     searchInput.addEventListener('input', function() {
-        const query = searchInput.value.toLowerCase(); // Obtener el valor de búsqueda en minúsculas
+        const query = searchInput.value.toLowerCase(); 
 
-        // Filtrar helados
         heladosList.forEach(item => {
             const productName = item.querySelector('h3').textContent.toLowerCase();
             if (productName.includes(query)) {
-                item.style.display = 'block'; // Mostrar si coincide con la búsqueda
+                item.style.display = 'block'; 
             } else {
-                item.style.display = 'none'; // Ocultar si no coincide
+                item.style.display = 'none'; 
             }
         });
 
-        // Filtrar especialidades
         especialidadesList.forEach(item => {
             const productName = item.querySelector('h3').textContent.toLowerCase();
             if (productName.includes(query)) {
@@ -168,7 +166,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Filtrar bebidas
         bebidasList.forEach(item => {
             const productName = item.querySelector('h3').textContent.toLowerCase();
             if (productName.includes(query)) {
