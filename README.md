@@ -242,7 +242,7 @@ En este caso he utilizado constantes de todos los bloques del formulario y ha to
 Necesitamos un nombre, un correo haciendo uso de @, un numero de teléfono con 9 números, un mensaje de registro, fecha, hora y que valide el formulario si es correcto y cumple los requisitos.
 Ejemplo de captura de errores
 
-```
+``` JavaScript
 function validarFormulario(event) {
         console.log("Validando formulario...");
 
