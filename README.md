@@ -238,7 +238,53 @@ imagenes.forEach(imagen => {
 ```
 ## Diseñar un formulario con validación dinámica que muestre mensajes de error o éxito según la interacción del usuario.
 
+En este caso he utilizado constantes de todos los bloques del formulario y ha todos un if, else si cumplen los requerimientos básicos de cada apartado.
+Necesitamos un nombre, un correo haciendo uso de @, un numero de teléfono con 9 números, un mensaje de registro, fecha, hora y que valide el formulario si es correcto y cumple los requisitos.
+Ejemplo de captura de errores
 
+```
+function validarFormulario(event) {
+        console.log("Validando formulario...");
+
+        let errores = [];
+
+        if (nombreInput.value.trim() === "") {
+            errores.push("El campo Nombre es obligatorio.");
+        }
+
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+            errores.push("El correo electrónico no es válido.");
+        }
+
+        const telefonoRegex = /^[0-9]{9}$/;
+        if (!telefonoRegex.test(telefonoInput.value.trim())) {
+            errores.push("El teléfono debe tener 9 dígitos.");
+        }
+
+        if (mensajeInput.value.trim() === "") {
+            errores.push("El campo Mensaje es obligatorio.");
+        }
+
+        if (fechaInput.value === "") {
+            errores.push("El campo Fecha de visita es obligatorio.");
+        }
+
+        if (horaInput.value && !/^([0-1]?[0-9]|2[0-3]):([0-5][0-9])$/.test(horaInput.value)) {
+            errores.push("La hora no es válida.");
+        }
+
+        if (errores.length > 0) {
+            event.preventDefault(); 
+            mostrarErrores(errores);
+            console.log("Errores encontrados:", errores);
+        } else {
+
+            console.log("Formulario validado correctamente.");
+            alert("Formulario enviado con éxito.");
+        }
+    }
+```
 
 ## Implementar un sistema de filtros que permita mostrar u ocultar elementos de la página (por ejemplo, productos o entradas de blog) según criterios seleccionados por el usuario.
 
