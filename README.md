@@ -1,5 +1,5 @@
 # Trabajo-Segundo-Trimestre-Lenguaje-de-Marcas
-Heladería Los Italianos
+## Heladería Los Italianos
 
 ---
 
@@ -18,22 +18,22 @@ Mucha información de la página web es completamente irreal, ya que, al tener u
 
 ---
 
-## Índice.
+## Índice
 - Se encuentra todo lo relacionado con nuestra página web, para que sea más flexible y cómodo, la página web contiene un marcador con nuestros cuatro archivos, relacionados todos.
 - Continene un título principal y dentro tres sections que incluyen una foto y breve explicación de que se ofrece en cada una de las fotos, en este caso, Salón Italiano, Promociones y Ubicación.
 - El footer es igual para todos los archivos, incluyen nuestras redes sociales, el número de teléfono, la dirección y un botón de inicio para volver al índice siempre que se quiera.
 
 
-## Carta.
+## Carta
 - Todos los sabores de nuestra heladería se encuentran dentro de este menú, cada uno viene con su respectiva foto para que el cliente pueda saber que va a consumir, para poder colocar todas las fotos iguales,
 estuve bastante tiempo pero conseguí arreglarlo haciendo un cambio en el css en las class .helado-item y .especialidad-item.
 - También por supuesto contiene nuestras especialidades y las bebidas que ofertamos.
 
-## Formulario.
+## Formulario
 - La página de contacto contiene 6 espacios necesarios para poder registrarse en la pagina web de la heladería.
 - Y contiene nuestra política de privacidad para que el cliente siempre sepa que tiene y no tiene que hacer dentro de la página web.
 
-## Reseñas.
+## Reseñas
 - Es el archivo más sencillo de la página web, pero no quita que sea importante, en la sección se encuentran reseñas de clintes.
 - También incluye un poquito de nuestra historia, desde cuando estamos alojados en Cádiz y nuestra calidad y dedicación
 
@@ -227,6 +227,8 @@ En esta tercera parte deveremos de:
 Para poder realizar una galeria interactiva necesitamos utilizar un modal, este es un contenedor que permitirá acceder a la imagen que el cliente quiera mirar con zoom, 
 esta imagen cuando el cliente haga click, se ampliará y dejará al resto en segundo plano siendo esta la principal.
 
+Con esta función hacemos que la imagen cuando empiece el evento(en este caso nuestro click), el modal abre la imagen.
+
 ```JavaScript
 imagenes.forEach(imagen => {
     imagen.addEventListener('click', function(event) {
@@ -236,10 +238,23 @@ imagenes.forEach(imagen => {
     });
 });
 ```
+El modal consiste en un div(contenedor) que, aunque en el trabajo lo he intentado omitir siempre para la realización de buenas prácticas, solo necesitaba un contenedor vacio que es la característica principal del div,
+por lo que lo he utilizado e imlementado en el archivo html.
+
+```JavaScript
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+```
+
 ## Diseñar un formulario con validación dinámica que muestre mensajes de error o éxito según la interacción del usuario.
 
 En este caso he utilizado constantes de todos los bloques del formulario y ha todos un if, else si cumplen los requerimientos básicos de cada apartado.
+
 Necesitamos un nombre, un correo haciendo uso de @, un numero de teléfono con 9 números, un mensaje de registro, fecha, hora y que valide el formulario si es correcto y cumple los requisitos.
+
 Ejemplo de captura de errores
 
 ``` JavaScript
@@ -288,6 +303,97 @@ function validarFormulario(event) {
 
 ## Implementar un sistema de filtros que permita mostrar u ocultar elementos de la página (por ejemplo, productos o entradas de blog) según criterios seleccionados por el usuario.
 
+Para darle protagonismo a todos los archivos del trabajo, he decidido hacer el sistema de filtros en el archivo de reseñas, para que se pueda elegir ver una reseña en concreto o 
+ver todas al completo.
+
+Para esto he usado una función filtrar reseñas, en la que mediante un if, programo que se pueda elegir entre ver TODOS, o ver a cada autor de la reseña y una opción de ir cambiando entre uno y otro.
+
+Ejemplo de elección entre TODOS y AUTORES.
+
+```JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const autorSelect = document.getElementById('autor');
+    
+    function filtrarReseñas() {
+        const autor = autorSelect.value; 
+        console.log("Autor seleccionado:", autor); 
+
+        const reseñas = document.querySelectorAll('.reseñas .item-reseña');
+
+        reseñas.forEach(function(reseña) {
+            const autorR = reseña.getAttribute('data-autor');
+            console.log("Autor de la reseña:", autorR); 
+
+            if (autor === 'todos' || autor === autorR) {
+                reseña.style.display = 'block'; 
+                console.log("Mostrar reseña de autor:", autorR);
+            } else {
+                reseña.style.display = 'none'; 
+                console.log("Ocultar reseña de autor:", autorR);
+            }
+        });
+    }
+
+    autorSelect.addEventListener('change', filtrarReseñas);
+
+    filtrarReseñas();
+```
 
 ## Crear un flujo libre del proyecto.
-Con esta función hacemos que la imagen cuando empiece el evento(en este caso nuestro click), el modal abre la imagen.
+
+Como mi página web es una heladería no hay opción de carrito, ya que nuestros productos se consumen dentro del local y pidiendo allí mismo su pedido,
+he decidido actualizar la página de productos para que el cliente pueda buscar su helado, batido, refresco, etc.. nada más entrar en la sección de productos.
+
+Así el cliente podrá ver directamente si lo que quisiera pedir se encuentra dentro de nuestra carta, esto hace que el modal, permita a la vez que busca que quiere consumir,
+también deje ver más de cerca las opciones del cliente. 
+
+Para hacerlo hago uso de cada uno de nuestros productos con un query.selector y hago que busque si se encuentra lo que busca dentro de nuestro rango de productos.
+
+Ejemplo de busqueda.
+
+```JavaScript
+document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('search');
+    const heladosList = document.querySelectorAll('.helado-item'); 
+    const especialidadesList = document.querySelectorAll('.especialidad-item'); 
+    const bebidasList = document.querySelectorAll('.bebida-item'); 
+
+
+    searchInput.addEventListener('input', function() {
+        const query = searchInput.value.toLowerCase(); 
+
+        heladosList.forEach(item => {
+            const productName = item.querySelector('h3').textContent.toLowerCase();
+            if (productName.includes(query)) {
+                item.style.display = 'block'; 
+            } else {
+                item.style.display = 'none'; 
+            }
+        });
+
+        especialidadesList.forEach(item => {
+            const productName = item.querySelector('h3').textContent.toLowerCase();
+            if (productName.includes(query)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        bebidasList.forEach(item => {
+            const productName = item.querySelector('h3').textContent.toLowerCase();
+            if (productName.includes(query)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+```
+## IMPORTANTE
+Para terminar, en todas las funciones de JavaScript hago uso de:
+```Javascript
+document.addEventListener("DOMContentLoaded", function()
+```
+Esto lo hago para que primero cargue el html y luego el JavaScript para que la página pueda renderizar bien y no haya fallos luego.
