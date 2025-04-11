@@ -216,9 +216,32 @@ Para que se puedan observar de manera clara las definiciones de la tabla, aqui d
 Continuación del trabajo de nuestra heladería "Los Italianos", implementando a nuestra información sobre JavaScript mayor calidad;
 
 En esta tercera parte deveremos de:
-- Crear un sistema de galería interactiva donde las imágenes puedan añadirse o eliminarse dinámicamente.
+- Crear un sistema de galería interactiva.
 - Diseñar un formulario con validación dinámica que muestre mensajes de error o éxito según la interacción del usuario.
 - Implementar un sistema de filtros que permita mostrar u ocultar elementos de la página (por ejemplo, productos o entradas de blog) según criterios seleccionados por el usuario.
 - Crear un flujo libre del proyecto.
 
 
+## Crear un sistema de galería interactiva.
+
+Para poder realizar una galeria interactiva necesitamos utilizar un modal, este es un contenedor que permitirá acceder a la imagen que el cliente quiera mirar con zoom, 
+esta imagen cuando el cliente haga click, se ampliará y dejará al resto en segundo plano siendo esta la principal.
+
+```JavaScript
+imagenes.forEach(imagen => {
+    imagen.addEventListener('click', function(event) {
+        modal.style.display = 'block';
+        modalImg.src = event.target.src; 
+        console.log('Abriendo el modal para la imagen: ', event.target.src);
+    });
+});
+```
+## Diseñar un formulario con validación dinámica que muestre mensajes de error o éxito según la interacción del usuario.
+
+
+
+## Implementar un sistema de filtros que permita mostrar u ocultar elementos de la página (por ejemplo, productos o entradas de blog) según criterios seleccionados por el usuario.
+
+
+## Crear un flujo libre del proyecto.
+Con esta función hacemos que la imagen cuando empiece el evento(en este caso nuestro click), el modal abre la imagen.
