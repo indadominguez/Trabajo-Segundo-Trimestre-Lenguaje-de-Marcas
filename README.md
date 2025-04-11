@@ -214,7 +214,7 @@ Para que se puedan observar de manera clara las definiciones de la tabla, aqui d
     console.log("Estilos para modo oscuro.");
 
 # Fase 3
-Continuación del trabajo de nuestra heladería "Los Italianos";
+Continuación del trabajo de nuestra heladería "Los Italianos", implementando a nuestra información sobre JavaScript mayor calidad;
 
 En esta tercera parte deveremos de:
 - Crear un sistema de galería interactiva donde las imágenes puedan añadirse o eliminarse dinámicamente.
@@ -222,4 +222,4 @@ En esta tercera parte deveremos de:
 - Implementar un sistema de filtros que permita mostrar u ocultar elementos de la página (por ejemplo, productos o entradas de blog) según criterios seleccionados por el usuario.
 - Crear un flujo libre del proyecto.
 
-Para poder realizar las actividades propuestas vamos a borrar la fase 2 y a implentar conocimientos más completos y no tan sencillos como los de la fase anterior.
+
