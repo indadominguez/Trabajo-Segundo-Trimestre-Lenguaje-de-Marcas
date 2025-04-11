@@ -3,29 +3,24 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Galería cargada correctamente");
 
-    // Obtener todas las imágenes de helados
-    const imagenes = document.querySelectorAll('.imagen-helado');
+    const imagenes = document.querySelectorAll('.imagen-helado, .imagen-especialidad, .imagen-bebida');
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('img01');
     const closeBtn = document.querySelector('.close');
 
-    // Agregar un evento a cada imagen
     imagenes.forEach(imagen => {
         imagen.addEventListener('click', function(event) {
-            // Mostrar el modal y poner la imagen seleccionada
             modal.style.display = 'block';
-            modalImg.src = event.target.src; // Establecer la imagen en el modal
+            modalImg.src = event.target.src; 
             console.log('Abriendo el modal para la imagen: ', event.target.src);
         });
     });
 
-    // Cerrar el modal cuando se haga clic en el botón de cerrar
     closeBtn.addEventListener('click', function() {
         modal.style.display = 'none';
         console.log('Modal cerrado');
     });
 
-    // Cerrar el modal si el fondo oscuro (fuera de la imagen) es clickeado
     modal.addEventListener('click', function(event) {
         if (event.target === modal) {
             modal.style.display = 'none';
@@ -119,13 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function filtrarReseñas() {
         const autor = autorSelect.value; 
-        console.log("Autor seleccionado:", autor); // Verifica que el valor seleccionado sea el correcto
+        console.log("Autor seleccionado:", autor); 
 
         const reseñas = document.querySelectorAll('.reseñas .item-reseña');
 
         reseñas.forEach(function(reseña) {
             const autorR = reseña.getAttribute('data-autor');
-            console.log("Autor de la reseña:", autorR); // Verifica que los valores de autor estén correctamente definidos
+            console.log("Autor de la reseña:", autorR); 
 
             if (autor === 'todos' || autor === autorR) {
                 reseña.style.display = 'block'; 
@@ -140,4 +135,47 @@ document.addEventListener('DOMContentLoaded', function() {
     autorSelect.addEventListener('change', filtrarReseñas);
 
     filtrarReseñas();
+});
+
+// Flujo
+document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('search'); // Obtener el campo de búsqueda
+    const heladosList = document.querySelectorAll('.helado-item'); // Obtener todos los productos (helados)
+    const especialidadesList = document.querySelectorAll('.especialidad-item'); // Obtener todas las especialidades
+    const bebidasList = document.querySelectorAll('.bebida-item'); // Obtener todas las bebidas
+
+    // Función para filtrar los productos
+    searchInput.addEventListener('input', function() {
+        const query = searchInput.value.toLowerCase(); // Obtener el valor de búsqueda en minúsculas
+
+        // Filtrar helados
+        heladosList.forEach(item => {
+            const productName = item.querySelector('h3').textContent.toLowerCase();
+            if (productName.includes(query)) {
+                item.style.display = 'block'; // Mostrar si coincide con la búsqueda
+            } else {
+                item.style.display = 'none'; // Ocultar si no coincide
+            }
+        });
+
+        // Filtrar especialidades
+        especialidadesList.forEach(item => {
+            const productName = item.querySelector('h3').textContent.toLowerCase();
+            if (productName.includes(query)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Filtrar bebidas
+        bebidasList.forEach(item => {
+            const productName = item.querySelector('h3').textContent.toLowerCase();
+            if (productName.includes(query)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
 });
