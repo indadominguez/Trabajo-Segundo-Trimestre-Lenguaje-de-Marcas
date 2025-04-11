@@ -1,82 +1,143 @@
 
-// 1. SELECCIONAR ELEMENTOS DEL DOM
-const formulario = document.querySelector(".formulario form");
-console.log("Formulario seleccionado:", formulario);
+// Productos
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Galería cargada correctamente");
 
-const tituloFormulario = document.querySelector(".formulario h2");
-console.log("Título del formulario antes del cambio:", tituloFormulario.textContent);
+    // Obtener todas las imágenes de helados
+    const imagenes = document.querySelectorAll('.imagen-helado');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('img01');
+    const closeBtn = document.querySelector('.close');
 
-const campoNombre = document.getElementById("nombre");
-console.log("Campo Nombre seleccionado:", campoNombre);
+    // Agregar un evento a cada imagen
+    imagenes.forEach(imagen => {
+        imagen.addEventListener('click', function(event) {
+            // Mostrar el modal y poner la imagen seleccionada
+            modal.style.display = 'block';
+            modalImg.src = event.target.src; // Establecer la imagen en el modal
+            console.log('Abriendo el modal para la imagen: ', event.target.src);
+        });
+    });
 
-const botonEnviar = document.querySelector("button[type='submit']");
-console.log("Botón de enviar seleccionado:", botonEnviar);
+    // Cerrar el modal cuando se haga clic en el botón de cerrar
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        console.log('Modal cerrado');
+    });
 
-const redesSociales = document.querySelector(".social-media");
-console.log("Redes sociales seleccionadas:", redesSociales);
-
-// 2. MODIFICAR CONTENIDO Y ATRIBUTOS
-tituloFormulario.textContent = "¡Queremos saber de ti!"; // Cambia el título del formulario
-console.log("Título del formulario después del cambio:", tituloFormulario.textContent);
-
-
-// 3. AÑADIR NUEVOS ELEMENTOS
-const nuevoParrafo = document.createElement("p");
-nuevoParrafo.textContent = "Déjanos tu mensaje y te responderemos lo antes posible.";
-document.querySelector(".formulario").insertBefore(nuevoParrafo, formulario);
-console.log("Nuevo párrafo agregado antes del formulario:", nuevoParrafo.textContent);
-
-// 4. ELIMINAR ELEMENTOS SEGÚN CONDICIÓN
-// Elimina el logo de Twitter si existe
-const twitterLogo = document.querySelector("a[aria-label='Twitter']");
-if (twitterLogo) {
-    twitterLogo.parentElement.remove();
-    console.log("El logo de Twitter ha sido eliminado.");
-} else {
-    console.log("No se encontró el logo de Twitter.");
-}
-
-// 5. MANIPULAR ESTILOS DINÁMICAMENTE
-botonEnviar.addEventListener("mouseover", () => {
-    botonEnviar.style.backgroundColor = "#ff6600"; // Color al pasar el cursor
-    botonEnviar.style.color = "#fff";
-    console.log("Mouse sobre el botón de enviar: color cambiado a naranja.");
-});
-botonEnviar.addEventListener("mouseout", () => {
-    botonEnviar.style.backgroundColor = ""; // Vuelve al color original
-    botonEnviar.style.color = "";
-    console.log("Mouse fuera del botón de enviar: color como antes");
+    // Cerrar el modal si el fondo oscuro (fuera de la imagen) es clickeado
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            console.log('Modal cerrado al hacer clic en el fondo');
+        }
+    });
 });
 
-// 6. CREAR UN NUEVO BOTÓN PARA CAMBIAR EL TEMA DE LA PÁGINA
-const botonTema = document.createElement("button");
-botonTema.textContent = "Modo Oscuro";
-botonTema.style.margin = "1rem";
-document.body.insertBefore(botonTema, document.body.firstChild);
-console.log("Botón de cambio de tema.");
 
-botonTema.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    const modoActual = document.body.classList.contains("dark-mode") ? "Modo Oscuro" : "Modo Claro";
-    botonTema.textContent = modoActual;
-    console.log("Modo cambiado a:", modoActual);
-});
+// Formulario
+document.addEventListener("DOMContentLoaded", function() {
+    const formulario = document.getElementById("contacto-form"); 
+    const nombreInput = document.getElementById("nombre");
+    const emailInput = document.getElementById("email");
+    const telefonoInput = document.getElementById("telefono");
+    const mensajeInput = document.getElementById("mensaje");
+    const fechaInput = document.getElementById("fecha");
+    const horaInput = document.getElementById("hora");
+    const botonEnviar = formulario.querySelector("button[type='submit']");
+    
+    console.log("Formulario cargado correctamente");
 
-// 7. AGREGAR ESTILOS PARA EL MODO OSCURO
-const estiloModoOscuro = document.createElement("style");
-estiloModoOscuro.textContent = `
-    .dark-mode {
-        background-color: #222;
-        color: white;
+    function validarFormulario(event) {
+        console.log("Validando formulario...");
+
+        let errores = [];
+
+        if (nombreInput.value.trim() === "") {
+            errores.push("El campo Nombre es obligatorio.");
+        }
+
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+            errores.push("El correo electrónico no es válido.");
+        }
+
+        const telefonoRegex = /^[0-9]{9}$/;
+        if (!telefonoRegex.test(telefonoInput.value.trim())) {
+            errores.push("El teléfono debe tener 9 dígitos.");
+        }
+
+        if (mensajeInput.value.trim() === "") {
+            errores.push("El campo Mensaje es obligatorio.");
+        }
+
+        if (fechaInput.value === "") {
+            errores.push("El campo Fecha de visita es obligatorio.");
+        }
+
+        if (horaInput.value && !/^([0-1]?[0-9]|2[0-3]):([0-5][0-9])$/.test(horaInput.value)) {
+            errores.push("La hora no es válida.");
+        }
+
+        if (errores.length > 0) {
+            event.preventDefault(); 
+            mostrarErrores(errores);
+            console.log("Errores encontrados:", errores);
+        } else {
+
+            console.log("Formulario validado correctamente.");
+            alert("Formulario enviado con éxito.");
+        }
     }
-    .dark-mode a {
-        color: lightblue;
+
+    function mostrarErrores(errores) {
+
+        const errorContainer = document.querySelector(".error-container");
+        if (errorContainer) {
+            errorContainer.remove();
+        }
+
+        const newErrorContainer = document.createElement("div");
+        newErrorContainer.classList.add("error-container");
+
+        errores.forEach(function(error) {
+            const errorItem = document.createElement("p");
+            errorItem.textContent = error;
+            newErrorContainer.appendChild(errorItem);
+        });
+
+        formulario.insertAdjacentElement("beforebegin", newErrorContainer);
     }
-`;
-document.head.appendChild(estiloModoOscuro);
-console.log("Estilos para modo oscuro.");
+
+    formulario.addEventListener("submit", validarFormulario);
+});
 
 
- 
+// Filtro Reseña
+document.addEventListener('DOMContentLoaded', function() {
+    const autorSelect = document.getElementById('autor');
+    
+    function filtrarReseñas() {
+        const autor = autorSelect.value; 
+        console.log("Autor seleccionado:", autor); // Verifica que el valor seleccionado sea el correcto
 
+        const reseñas = document.querySelectorAll('.reseñas .item-reseña');
 
+        reseñas.forEach(function(reseña) {
+            const autorR = reseña.getAttribute('data-autor');
+            console.log("Autor de la reseña:", autorR); // Verifica que los valores de autor estén correctamente definidos
+
+            if (autor === 'todos' || autor === autorR) {
+                reseña.style.display = 'block'; 
+                console.log("Mostrar reseña de autor:", autorR);
+            } else {
+                reseña.style.display = 'none'; 
+                console.log("Ocultar reseña de autor:", autorR);
+            }
+        });
+    }
+
+    autorSelect.addEventListener('change', filtrarReseñas);
+
+    filtrarReseñas();
+});

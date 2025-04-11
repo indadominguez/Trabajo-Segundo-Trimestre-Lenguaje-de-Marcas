@@ -35,18 +35,31 @@
             </p>
         </section>
 
+        <!-- Filtros -->
+        <section id="filtros">
+            <h2>Filtrar Reseñas</h2>
+            <label for="autor">Autor:</label>
+            <select id="autor">
+                <option value="todos">Todos</option>
+                <option value="Irene Flores">Irene Flores</option>
+                <option value="Antonio Crespo">Antonio Crespo</option>
+                <option value="Mario Zafra">Mario Zafra</option>
+            </select>
+        </section>
+
+        <!-- Reseñas -->
         <section class="reseñas">
             <h2>Reseñas de Nuestros Clientes</h2>
             <ul class="lista-reseñas">
-                <li class="item-reseña">
+                <li class="item-reseña" data-autor="Irene Flores">
                     <h3>Irene Flores</h3>
                     <p>"El mejor helado de Cádiz, sin duda. Los sabores son increíbles, y el servicio es insuperable."</p>
                 </li>
-                <li class="item-reseña">
+                <li class="item-reseña" data-autor="Antonio Crespo">
                     <h3>Antonio Crespo</h3>
                     <p>"Cada vez que visito la ciudad, tengo que pasar por esta heladería. ¡El helado de pistacho es mi favorito!"</p>
                 </li>
-                <li class="item-reseña">
+                <li class="item-reseña" data-autor="Mario Zafra">
                     <h3>Mario Zafra</h3>
                     <p>"Un lugar perfecto para disfrutar en familia. Los helados artesanales son simplemente espectaculares."</p>
                 </li>
@@ -78,7 +91,10 @@
             </li>
         </ul>
     </footer>
+
+    <script src="../js/scripts.js"></script>
 </body>
 </html>
+
 
 
